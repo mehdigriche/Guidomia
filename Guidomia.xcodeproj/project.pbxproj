@@ -21,6 +21,9 @@
 		A33232AB29004670001DC633 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33232AA29004670001DC633 /* UIView.swift */; };
 		A33232B129004EDD001DC633 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33232AF29004EDD001DC633 /* ItemTableViewCell.swift */; };
 		A33232B229004EDD001DC633 /* ItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A33232B029004EDD001DC633 /* ItemTableViewCell.xib */; };
+		A3ECCB5D2900868500E1EB25 /* car_list.json in Resources */ = {isa = PBXBuildFile; fileRef = A3ECCB5C2900868500E1EB25 /* car_list.json */; };
+		A3ECCB602900876C00E1EB25 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3ECCB5F2900876C00E1EB25 /* Car.swift */; };
+		A3ECCB6229008DA100E1EB25 /* CarResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3ECCB6129008DA100E1EB25 /* CarResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +43,9 @@
 		A33232AA29004670001DC633 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		A33232AF29004EDD001DC633 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
 		A33232B029004EDD001DC633 /* ItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemTableViewCell.xib; sourceTree = "<group>"; };
+		A3ECCB5C2900868500E1EB25 /* car_list.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = car_list.json; sourceTree = "<group>"; };
+		A3ECCB5F2900876C00E1EB25 /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
+		A3ECCB6129008DA100E1EB25 /* CarResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,12 +78,13 @@
 		A332327F29003164001DC633 /* Guidomia */ = {
 			isa = PBXGroup;
 			children = (
+				A332328029003164001DC633 /* AppDelegate.swift */,
+				A332328229003164001DC633 /* SceneDelegate.swift */,
+				A3ECCB5E2900875700E1EB25 /* Model */,
 				A33232A929004658001DC633 /* Extensions */,
 				A332329E2900338F001DC633 /* Constants */,
 				A332329429003284001DC633 /* Views */,
-				A332328029003164001DC633 /* AppDelegate.swift */,
-				A332328229003164001DC633 /* SceneDelegate.swift */,
-				A332328929003166001DC633 /* Assets.xcassets */,
+				A3ECCB5B2900865900E1EB25 /* Ressources */,
 				A332328B29003166001DC633 /* LaunchScreen.storyboard */,
 				A332328E29003166001DC633 /* Info.plist */,
 			);
@@ -147,6 +154,24 @@
 			path = ItemTableViewCell;
 			sourceTree = "<group>";
 		};
+		A3ECCB5B2900865900E1EB25 /* Ressources */ = {
+			isa = PBXGroup;
+			children = (
+				A3ECCB5C2900868500E1EB25 /* car_list.json */,
+				A332328929003166001DC633 /* Assets.xcassets */,
+			);
+			path = Ressources;
+			sourceTree = "<group>";
+		};
+		A3ECCB5E2900875700E1EB25 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A3ECCB5F2900876C00E1EB25 /* Car.swift */,
+				A3ECCB6129008DA100E1EB25 /* CarResponse.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -207,6 +232,7 @@
 			files = (
 				A332328D29003166001DC633 /* LaunchScreen.storyboard in Resources */,
 				A332328A29003166001DC633 /* Assets.xcassets in Resources */,
+				A3ECCB5D2900868500E1EB25 /* car_list.json in Resources */,
 				A33232A529003BD2001DC633 /* BannerView.xib in Resources */,
 				A332328829003164001DC633 /* Main.storyboard in Resources */,
 				A33232B229004EDD001DC633 /* ItemTableViewCell.xib in Resources */,
@@ -226,7 +252,9 @@
 				A332328529003164001DC633 /* ViewController.swift in Sources */,
 				A33232AB29004670001DC633 /* UIView.swift in Sources */,
 				A33232B129004EDD001DC633 /* ItemTableViewCell.swift in Sources */,
+				A3ECCB602900876C00E1EB25 /* Car.swift in Sources */,
 				A332328129003164001DC633 /* AppDelegate.swift in Sources */,
+				A3ECCB6229008DA100E1EB25 /* CarResponse.swift in Sources */,
 				A332328329003164001DC633 /* SceneDelegate.swift in Sources */,
 				A332329C29003333001DC633 /* MenuView.swift in Sources */,
 			);
