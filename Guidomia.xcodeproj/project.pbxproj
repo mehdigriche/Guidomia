@@ -13,9 +13,12 @@
 		A332328829003164001DC633 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A332328629003164001DC633 /* Main.storyboard */; };
 		A332328A29003166001DC633 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A332328929003166001DC633 /* Assets.xcassets */; };
 		A332328D29003166001DC633 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A332328B29003166001DC633 /* LaunchScreen.storyboard */; };
-		A332329C29003333001DC633 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A332329A29003333001DC633 /* MenuViewController.swift */; };
-		A332329D29003333001DC633 /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A332329B29003333001DC633 /* MenuViewController.xib */; };
+		A332329C29003333001DC633 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A332329A29003333001DC633 /* MenuView.swift */; };
+		A332329D29003333001DC633 /* MenuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A332329B29003333001DC633 /* MenuView.xib */; };
 		A33232A0290033B2001DC633 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A332329F290033B2001DC633 /* Constants.swift */; };
+		A33232A429003BD2001DC633 /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33232A229003BD2001DC633 /* BannerView.swift */; };
+		A33232A529003BD2001DC633 /* BannerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A33232A329003BD2001DC633 /* BannerView.xib */; };
+		A33232AB29004670001DC633 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33232AA29004670001DC633 /* UIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,9 +30,12 @@
 		A332328929003166001DC633 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A332328C29003166001DC633 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A332328E29003166001DC633 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A332329A29003333001DC633 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
-		A332329B29003333001DC633 /* MenuViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
+		A332329A29003333001DC633 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		A332329B29003333001DC633 /* MenuView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuView.xib; sourceTree = "<group>"; };
 		A332329F290033B2001DC633 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		A33232A229003BD2001DC633 /* BannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
+		A33232A329003BD2001DC633 /* BannerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BannerView.xib; sourceTree = "<group>"; };
+		A33232AA29004670001DC633 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,12 +68,11 @@
 		A332327F29003164001DC633 /* Guidomia */ = {
 			isa = PBXGroup;
 			children = (
+				A33232A929004658001DC633 /* Extensions */,
 				A332329E2900338F001DC633 /* Constants */,
 				A332329429003284001DC633 /* Views */,
 				A332328029003164001DC633 /* AppDelegate.swift */,
 				A332328229003164001DC633 /* SceneDelegate.swift */,
-				A332328429003164001DC633 /* ViewController.swift */,
-				A332328629003164001DC633 /* Main.storyboard */,
 				A332328929003166001DC633 /* Assets.xcassets */,
 				A332328B29003166001DC633 /* LaunchScreen.storyboard */,
 				A332328E29003166001DC633 /* Info.plist */,
@@ -78,6 +83,8 @@
 		A332329429003284001DC633 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A33232A629003EC0001DC633 /* Home */,
+				A33232A129003B70001DC633 /* Banner */,
 				A332329529003290001DC633 /* Menu */,
 			);
 			path = Views;
@@ -86,8 +93,8 @@
 		A332329529003290001DC633 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
-				A332329A29003333001DC633 /* MenuViewController.swift */,
-				A332329B29003333001DC633 /* MenuViewController.xib */,
+				A332329B29003333001DC633 /* MenuView.xib */,
+				A332329A29003333001DC633 /* MenuView.swift */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -98,6 +105,32 @@
 				A332329F290033B2001DC633 /* Constants.swift */,
 			);
 			path = Constants;
+			sourceTree = "<group>";
+		};
+		A33232A129003B70001DC633 /* Banner */ = {
+			isa = PBXGroup;
+			children = (
+				A33232A229003BD2001DC633 /* BannerView.swift */,
+				A33232A329003BD2001DC633 /* BannerView.xib */,
+			);
+			path = Banner;
+			sourceTree = "<group>";
+		};
+		A33232A629003EC0001DC633 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				A332328429003164001DC633 /* ViewController.swift */,
+				A332328629003164001DC633 /* Main.storyboard */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		A33232A929004658001DC633 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A33232AA29004670001DC633 /* UIView.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -160,8 +193,9 @@
 			files = (
 				A332328D29003166001DC633 /* LaunchScreen.storyboard in Resources */,
 				A332328A29003166001DC633 /* Assets.xcassets in Resources */,
+				A33232A529003BD2001DC633 /* BannerView.xib in Resources */,
 				A332328829003164001DC633 /* Main.storyboard in Resources */,
-				A332329D29003333001DC633 /* MenuViewController.xib in Resources */,
+				A332329D29003333001DC633 /* MenuView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -172,11 +206,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A33232A429003BD2001DC633 /* BannerView.swift in Sources */,
 				A33232A0290033B2001DC633 /* Constants.swift in Sources */,
 				A332328529003164001DC633 /* ViewController.swift in Sources */,
+				A33232AB29004670001DC633 /* UIView.swift in Sources */,
 				A332328129003164001DC633 /* AppDelegate.swift in Sources */,
 				A332328329003164001DC633 /* SceneDelegate.swift in Sources */,
-				A332329C29003333001DC633 /* MenuViewController.swift in Sources */,
+				A332329C29003333001DC633 /* MenuView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
