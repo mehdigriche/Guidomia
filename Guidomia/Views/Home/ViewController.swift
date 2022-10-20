@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var itemsTableView: UITableView!
     var carResponse = CarResponse()
     var carsList : [Car?] = []
+    var selectedRowIndex: IndexPath?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,12 +40,6 @@ class ViewController: UIViewController {
         )
         self.itemsTableView.dataSource = self
         self.itemsTableView.delegate = self
-        self.itemsTableView.estimatedRowHeight = 150
-        self.itemsTableView.rowHeight = UITableView.automaticDimension
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -71,24 +66,48 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "ItemTableViewCell", for: indexPath) as? ItemTableViewCell, let expandableItem = self.carsList[indexPath.row] else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: ItemTableViewCell().identifier, for: indexPath) as? ItemTableViewCell, let expandableItem = self.carsList[indexPath.row] else {
             return UITableViewCell()
         }
         
-        cell.topViewImage.image = UIImage(
-            named: expandableItem.make.replacingOccurrences(of: " ", with: "_").lowercased()
-        )
-        cell.topViewTitle.text = expandableItem.make + " \(expandableItem.model)"
-        cell.topViewSubtitle.text = "Price : \(expandableItem.marketPrice )"
-        print("expandableItem.rating \(expandableItem.rating)")
-        cell.setupRatings(stars: expandableItem.rating)
+        if indexPath.row == 0 {
+            cell.expandItem(isHidden: false)
+        }
+        
+        cell.item = expandableItem
         
         return cell
         
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.row == selectedRowIndex?.row {
+            return 400
+        }
         return 120
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        switch selectedRowIndex {
+        case nil:
+            selectedRowIndex = indexPath
+        default:
+            if selectedRowIndex == indexPath {
+                selectedRowIndex = nil
+            } else {
+                selectedRowIndex = indexPath
+                
+                tableView.visibleCells.forEach({
+                    if let safeItemTableViewCell = $0 as? ItemTableViewCell {
+                        safeItemTableViewCell.expandItem(isHidden: true)
+                    }
+                })
+                guard let cell = tableView.cellForRow(at: indexPath) as? ItemTableViewCell else { return }
+                cell.expandItem(isHidden: false)
+            }
+        }
+        tableView.reloadRows(at: [indexPath], with: .none)
     }
 }
 
