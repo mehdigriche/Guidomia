@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -25,14 +25,54 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nab-IL-5gz" userLabel="Banner" customClass="BannerView" customModule="Guidomia" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="94" width="414" height="220"/>
+                                <rect key="frame" x="0.0" y="94" width="414" height="200"/>
                                 <color key="backgroundColor" systemColor="systemYellowColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="220" id="80H-vD-I4J"/>
+                                    <constraint firstAttribute="height" constant="200" id="80H-vD-I4J"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sOM-5i-VJb">
+                                <rect key="frame" x="15" y="309" width="384" height="150"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filters" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Crs-1v-NCo">
+                                        <rect key="frame" x="15" y="5" width="354" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Any make" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BPS-Fs-mT4">
+                                        <rect key="frame" x="15" y="44" width="354" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="34" id="UNY-sa-uc8"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Any model" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kuL-bZ-WoG">
+                                        <rect key="frame" x="15" y="93" width="354" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="34" id="DEz-hu-NXZ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" name="GuidomiaDarkGray"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Crs-1v-NCo" secondAttribute="trailing" constant="15" id="9Tf-Cy-7Af"/>
+                                    <constraint firstItem="kuL-bZ-WoG" firstAttribute="leading" secondItem="sOM-5i-VJb" secondAttribute="leading" constant="15" id="BVx-5x-9oA"/>
+                                    <constraint firstItem="kuL-bZ-WoG" firstAttribute="top" secondItem="BPS-Fs-mT4" secondAttribute="bottom" constant="15" id="BrT-uI-BPN"/>
+                                    <constraint firstItem="BPS-Fs-mT4" firstAttribute="leading" secondItem="sOM-5i-VJb" secondAttribute="leading" constant="15" id="JLb-S0-JHu"/>
+                                    <constraint firstItem="Crs-1v-NCo" firstAttribute="top" secondItem="sOM-5i-VJb" secondAttribute="top" constant="5" id="RgV-cE-cEU"/>
+                                    <constraint firstItem="Crs-1v-NCo" firstAttribute="leading" secondItem="sOM-5i-VJb" secondAttribute="leading" constant="15" id="Tgf-hf-npj"/>
+                                    <constraint firstItem="BPS-Fs-mT4" firstAttribute="top" secondItem="Crs-1v-NCo" secondAttribute="bottom" constant="15" id="XbK-gY-mI9"/>
+                                    <constraint firstAttribute="height" constant="150" id="svr-da-Ijh"/>
+                                    <constraint firstAttribute="trailing" secondItem="kuL-bZ-WoG" secondAttribute="trailing" constant="15" id="xE1-ym-D70"/>
+                                    <constraint firstAttribute="trailing" secondItem="BPS-Fs-mT4" secondAttribute="trailing" constant="15" id="yGn-Oa-76e"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="tPI-r5-I4S">
-                                <rect key="frame" x="0.0" y="314" width="414" height="548"/>
+                                <rect key="frame" x="0.0" y="474" width="414" height="388"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="separatorColor" name="GuidomiaOrange"/>
                                 <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
@@ -51,13 +91,16 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="sOM-5i-VJb" firstAttribute="top" secondItem="nab-IL-5gz" secondAttribute="bottom" constant="15" id="0jK-4F-TNb"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="tPI-r5-I4S" secondAttribute="bottom" id="1cN-KC-UO4"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sOM-5i-VJb" secondAttribute="trailing" constant="15" id="4Hh-P8-z2P"/>
                             <constraint firstItem="HUJ-Ng-kh7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="4O7-re-Qf4"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="HUJ-Ng-kh7" secondAttribute="trailing" id="4wt-cc-JF8"/>
-                            <constraint firstItem="tPI-r5-I4S" firstAttribute="top" secondItem="nab-IL-5gz" secondAttribute="bottom" id="Bq5-oX-U0a"/>
                             <constraint firstItem="nab-IL-5gz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="G1Y-mm-Nnu"/>
                             <constraint firstItem="HUJ-Ng-kh7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="VkJ-Fh-a8K"/>
+                            <constraint firstItem="sOM-5i-VJb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="aRG-IB-hWz"/>
                             <constraint firstItem="tPI-r5-I4S" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="bGW-nu-WRI"/>
+                            <constraint firstItem="tPI-r5-I4S" firstAttribute="top" secondItem="sOM-5i-VJb" secondAttribute="bottom" constant="15" id="cky-vG-emM"/>
                             <constraint firstItem="nab-IL-5gz" firstAttribute="top" secondItem="HUJ-Ng-kh7" secondAttribute="bottom" id="evp-MA-H3s"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nab-IL-5gz" secondAttribute="trailing" id="h3T-d6-t65"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tPI-r5-I4S" secondAttribute="trailing" id="k2r-Pj-yAd"/>
@@ -66,7 +109,9 @@
                     <connections>
                         <outlet property="banner" destination="nab-IL-5gz" id="BCf-w2-ajl"/>
                         <outlet property="itemsTableView" destination="tPI-r5-I4S" id="Zyn-hB-bbw"/>
+                        <outlet property="makeFilter" destination="BPS-Fs-mT4" id="NmP-Jr-n9O"/>
                         <outlet property="menu" destination="HUJ-Ng-kh7" id="dQX-fn-4Al"/>
+                        <outlet property="modelFilter" destination="kuL-bZ-WoG" id="cKp-AW-gPr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -75,6 +120,9 @@
         </scene>
     </scenes>
     <resources>
+        <namedColor name="GuidomiaDarkGray">
+            <color red="0.5220000147819519" green="0.5220000147819519" blue="0.5220000147819519" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="GuidomiaOrange">
             <color red="0.98799997568130493" green="0.37599998712539673" blue="0.086000002920627594" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

@@ -12,14 +12,22 @@ class ViewController: UIViewController {
     @IBOutlet weak var menu: MenuView!
     @IBOutlet weak var banner: BannerView!
     @IBOutlet weak var itemsTableView: UITableView!
+    @IBOutlet weak var makeFilter: UITextField!
+    @IBOutlet weak var modelFilter: UITextField!
+    
+    
     var carResponse = CarResponse()
     var carsList : [Car?] = []
     var selectedRowIndex: IndexPath?
+    var filteredData = [Car?]()
+    var isSearching = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         carResponse.delegate = self
+        makeFilter.delegate = self
+        modelFilter.delegate = self
         carResponse.getCarsList()
         
         menu.setupView(
@@ -62,6 +70,9 @@ extension ViewController: CarResponseDelegate {
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if isSearching == true {
+            return filteredData.count
+        }
         return carsList.count
     }
     
@@ -74,7 +85,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
             cell.expandItem(isHidden: false)
         }
         
-        cell.item = expandableItem
+        cell.item = (!isSearching) ? expandableItem : self.filteredData[indexPath.row]
         
         return cell
         
@@ -108,6 +119,37 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
             }
         }
         tableView.reloadRows(at: [indexPath], with: .none)
+    }
+}
+
+extension ViewController: UITextFieldDelegate {
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        if makeFilter.text != "" {
+            filteredData = carsList.filter({
+                $0!.make
+                    .lowercased()
+                    .uppercased()
+                    .prefix(makeFilter.text!.count) == makeFilter.text!.lowercased().uppercased()
+            })
+            isSearching = true
+        } else if modelFilter.text != "" {
+            filteredData = carsList.filter({
+                $0!.model
+                    .lowercased()
+                    .uppercased()
+                    .prefix(modelFilter.text!.count) == modelFilter.text!.lowercased().uppercased()
+            })
+            isSearching = true
+        } else {
+            isSearching = false
+        }
+        
+        itemsTableView.reloadData()
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        isSearching = false
+        itemsTableView.reloadData()
     }
 }
 
