@@ -30,12 +30,21 @@ class ItemTableViewCell: UITableViewCell {
     }
     
     func setupRatings(stars: Int) {
-        let star = UIImageView()
-        star.contentMode = .scaleAspectFit
-        star.image = UIImage(named: "star")
-        
-        for _ in 0...stars {
+        for _ in 0..<stars {
+            let star = UIImageView()
+            star.contentMode = .scaleAspectFit
+            star.image = UIImage(named: "star")
+            
             ratingStackView.addArrangedSubview(star)
+            
+            star.widthAnchor.constraint(
+                equalTo: ratingStackView.widthAnchor, multiplier: 0.2
+            ).isActive = true
+        }
+        
+        let emptyView = UIView(frame: CGRect(x: 0, y: 0, width: ratingStackView.frame.width / 5, height: 0))
+        for _ in 0..<5 - stars {
+            ratingStackView.addArrangedSubview(emptyView)
         }
     }
     

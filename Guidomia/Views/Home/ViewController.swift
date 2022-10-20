@@ -57,7 +57,9 @@ class ViewController: UIViewController {
 extension ViewController: CarResponseDelegate {
     func didRecieveCarList(result: Bool, data: [Car?]) {
         if result {
-            carsList = data
+            DispatchQueue.main.async {
+                self.carsList = data
+            }
         }
     }
 }
@@ -78,6 +80,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         )
         cell.topViewTitle.text = expandableItem.make + " \(expandableItem.model)"
         cell.topViewSubtitle.text = "Price : \(expandableItem.marketPrice )"
+        print("expandableItem.rating \(expandableItem.rating)")
         cell.setupRatings(stars: expandableItem.rating)
         
         return cell
